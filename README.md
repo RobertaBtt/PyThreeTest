@@ -17,7 +17,6 @@ following requirements
 
 A function that given a sequence of coin flips (0 is tails, 1 is heads) finds the
 minimum quantity of permutations so that the sequence ends interspersed. 
-
 For example, given the sequence 0,1,1,0 
 how many changes are needed so that the result is 0,1,0,1
 ----

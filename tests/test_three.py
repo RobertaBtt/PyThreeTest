@@ -1,15 +1,24 @@
 from functions import py_three
 from unittest import TestCase
-from array import array as arr
+
 
 class PyThirdTest(TestCase):
 
-    def setUp(self):
-        # h for unsigned short
-        self.coins = arr.array('h',[0,1,0,1])
+    def test_example(self):
+         assert py_three.countChangeCoinInterval('0110') == 2
 
     def test_result(self):
-         assert py_three.countChangeCoinInterval(self.coins) == 2
+         assert py_three.countChangeCoinInterval('111110') == 2
+
+    def test_result_three(self):
+         assert py_three.countChangeCoinInterval('01101011') == 3
 
 
+    def test_four(self):
+         assert py_three.countChangeCoinInterval('1') == 0
 
+    def test_empty(self):
+         assert py_three.countChangeCoinInterval('') is None
+
+    def test_raise(self):
+        self.assertRaises(ValueError,py_three.countChangeCoinInterval('not valid'))
