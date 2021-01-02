@@ -1,7 +1,6 @@
 from functions import py_two
 from unittest import TestCase
 import pathlib
-import os
 
 class PyTwoTest(TestCase):
 
@@ -32,5 +31,5 @@ class PyTwoTest(TestCase):
             'file_owner': file_owner,
             'file_size': file_size
         }
-        assert py_two.findFirstFile(path, data) == "/home/verone/Work/github/PyThreeTest/busybox"
+        assert "github/PyThreeTest/busybox" in py_two.findFirstFile(path, data)
 
