@@ -15,7 +15,3 @@ def compare_elements(vector_1, vector_2):
     for element in vector_1:
         if element in vector_2:
             return element
-
-
-if __name__ == '__main__':
-    findFirstRepeated([],[])
