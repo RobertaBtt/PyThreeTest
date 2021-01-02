@@ -2,6 +2,7 @@ from functions import py_one
 from unittest import TestCase
 import array as arr
 
+#A function that given 2 vectors of integers finds the first repeated number
 
 class PyOneTest(TestCase):
 

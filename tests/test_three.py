@@ -21,4 +21,5 @@ class PyThirdTest(TestCase):
          assert py_three.countChangeCoinInterval('') is None
 
     def test_raise(self):
-        self.assertRaises(ValueError,py_three.countChangeCoinInterval('not valid'))
+        with self.assertRaises(ValueError):
+            result = py_three.countChangeCoinInterval('not valid')

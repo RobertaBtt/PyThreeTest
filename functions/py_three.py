@@ -2,7 +2,7 @@ from bitarray import bitarray
 
 
 def countChangeCoinInterval(coins: str):
-    if coins !='':
+    if coins != '':
         try:
             a = bitarray(coins)
             mask2 = buildMaskReguralIntervals(len(a), True)
@@ -17,9 +17,13 @@ def countChangeCoinInterval(coins: str):
                 if value != mask2[key]:
                     count_pattern2 += 1
 
+            # The two patters have both regular intervals,
+            # but, depending on the coins, they may have more
+            # changes to be calculated, wo we take the minimum
+
             return min(count_pattern1, count_pattern2)
         except ValueError:
-            pass
+            raise ValueError
     return None
 
 
@@ -31,27 +35,11 @@ def buildMaskReguralIntervals(size: int, start_with: bool) -> bitarray:
 
 
 if __name__ == '__main__':
-    #coins = '0110'
-    #print(countChangeCoinInterval(coins))
 
-    #coins = '10010000'
-    #print(countChangeCoinInterval(coins))
 
-#################################33
-    # coins = '01101011'  #Mask bitarray('10101010') return 3
-    # print(countChangeCoinInterval(coins))
-    #
-    # coins = '10010100' # Mask bitarray('10101010') return 5
-    # print(countChangeCoinInterval(coins))
+    # coins = '01101011'
+    # #Mask bitarray('10101010') return 3
+    # Mask bitarray('01010101') return 5
 
-    #coins = '01101011'  #Mask bitarray('01010101') return 5
-    #print(countChangeCoinInterval(coins))
-
-    #coins = '10010100' # Mask bitarray('01010101') return 3
-    #print(countChangeCoinInterval(coins))
-
-    #coins = '0110'
-    #print(countChangeCoinInterval(coins))
-
-    coins = ''
+    coins = '0110'
     print(countChangeCoinInterval(coins))
