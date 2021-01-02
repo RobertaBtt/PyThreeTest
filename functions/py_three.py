@@ -19,7 +19,7 @@ def countChangeCoinInterval(coins: str):
 
             # The two patters have both regular intervals,
             # but, depending on the coins, they may have more
-            # changes to be calculated, wo we take the minimum
+            # changes to be calculated, so we take the minimum
 
             return min(count_pattern1, count_pattern2)
         except ValueError:
@@ -32,7 +32,6 @@ def buildMaskReguralIntervals(size: int, start_with: bool) -> bitarray:
     mask.setall(not start_with)
     mask[1:size:2] = start_with
     return mask
-
 
 if __name__ == '__main__':
 
